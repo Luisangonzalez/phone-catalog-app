@@ -1,4 +1,4 @@
-.PHONY: build install_front dev_front build_front install_back dev_back build_back dev up
+.PHONY: build install_front dev_front build_front install_back dev_back build_back dev up test_back
 
 # Important
 PROJECT_NAME=phone-catalog-app
@@ -24,6 +24,9 @@ dev_back: build_back
 
 build_back: install_back
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./back && yarn run compile";
+
+test_back: build_back
+	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./back && yarn run test";
 
 dev: build_back build_front
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./back && yarn run dev & sleep 5 && cd front && yarn run dev";
