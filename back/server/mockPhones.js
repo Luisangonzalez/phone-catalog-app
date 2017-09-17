@@ -1,6 +1,7 @@
 export const PHONES = {
     phones: [
       {
+        'id': '1',
         'branch': 'Apple',
         'model': 'iPhone X',
         'color': 'black',
@@ -8,6 +9,7 @@ export const PHONES = {
         'year': '2017',
         'img': 'http://cdn2.gsmarena.com/vv/bigpic/apple-iphone-x.jpg'
       }, {
+        'id': '2',
         'branch': 'Xiaomi',
         'model': ' Mi A1 (5X)',
         'color': 'gold',
