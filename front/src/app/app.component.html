@@ -1,14 +1,35 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Select phones</span>
-    <app-list [phones]="phones | async"
-      (selected)="selectItem($event)">
-    </app-list>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-      <app-detail
-        [phone]="selectedItem | async">Select an Item</app-detail>
+<html>
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Phone Catalog App</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <app-list [phones]="phones | async"
+            (selected)="selectItem($event)">
+          </app-list>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Select device</span>
+        <app-list [phones]="phones | async"
+          (selected)="selectItem($event)">
+        </app-list>
+      </div>
+      <main class="mdl-layout__content">
+          <app-detail [phone]="selectedItem | async">Select an Item</app-detail>
+      </main>
     </div>
-  </main>
-</div>
+  </body>
+</html>

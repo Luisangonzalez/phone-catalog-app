@@ -5,11 +5,9 @@ import { Phone } from './phone.model';
   selector: 'app-detail',
   template: `
   <div class="fem-card mdl-card mdl-shadow--2dp">
-  <!--
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">Create New Item</h2>
-    </div>
-    -->
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{selectedItem.branch}} - {{selectedItem.model}}</h2>
+  </div>
   <div class="mdl-card__media">
       <img [src]="selectedItem.img">
   </div>
@@ -23,7 +21,7 @@ import { Phone } from './phone.model';
   {{selectedItem.color}}
   </div>
   <div class="mdl-card__supporting-text">
-  {{selectedItem.prize}}
+  {{selectedItem.price}}
   </div>
   <div class="mdl-card__supporting-text">
   {{selectedItem.year}}

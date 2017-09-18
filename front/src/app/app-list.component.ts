@@ -4,8 +4,8 @@ import { Phone } from './phone.model';
 @Component({
   selector: 'app-list',
   template: `
-  <nav *ngFor="let phone of phones" (click)="selected.emit(phone)" class="mdl-navigation">
-    <a class="mdl-navigation__link">{{phone.model}}</a>
+  <nav class="mdl-navigation">
+    <a *ngFor="let phone of phones" (click)="selected.emit(phone)" class="mdl-navigation__link">{{phone.model}}</a>
   </nav>
   `
 })
