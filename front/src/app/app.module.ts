@@ -1,21 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
+import { AppList } from './app-list.component';
+import { AppDetail } from './app-detail.component';
+
+import { phones } from './phones.store';
+import {selectedItem} from './selectedItem.store';
+
+import { PhonesService } from './phone.service';
+
+
+import {StoreModule} from '@ngrx/store';
+
+
 
 // Root Angular2 Module
 @NgModule({
   // Imports modules we depend on
     imports: [
         BrowserModule,
-        HttpModule
+        HttpModule,
+        FormsModule,
+        StoreModule.forRoot({phones, selectedItem})
+
     ],
     // Declare components, directives, pipes
     declarations: [
-        AppComponent    ],
+        AppComponent,
+        AppList,
+        AppDetail
+      ],
     // Provider services to app root injector
-    // providers: [],
+    providers: [PhonesService],
     // Bootstrap a component
     bootstrap: [AppComponent]
 })
