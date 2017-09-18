@@ -17,15 +17,32 @@ app-detail {
   display: flex;
   justify-content: center;
   padding: 5em;
-
-}
-
-.fem-card.mdl-card {
-  background: rgba(255, 255, 255, 0.43);
-  .mdl-card__media {
-    display: flex;
-    justify-content: center;
-    background-color: unset;
-    padding: 1em;
+  h1 {
+    font-size: 6em;
+    color: white;
   }
+  .fem-card.mdl-card {
+    background: rgba(255, 255, 255, 0.43);
+    .mdl-card__media {
+      display: flex;
+      justify-content: center;
+      background-color: unset;
+      padding: 1em;
+    }
+    .mdl-card__title {
+      display: flex;
+      align-self: center;
+    }
+    .mdl-card__supporting-text {
+      text-align: center;
+      .label {
+        font-size: 1em;
+      }
+      .text {
+        color: black;
+        font-size: 1.2em;
+      }
+    }
+  }
+
 }
