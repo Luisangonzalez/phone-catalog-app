@@ -1,37 +1,14 @@
-<!-- <header> -->
-  <!-- <ul class="navigation">
-  <li><a href="/">Home</a></li>
-  <li><a [routerLink]="['/login']"  *ngIf="!auth.loggedIn()">Login</a></li>
-  <li><a (click)="auth.logout()" *ngIf="auth.loggedIn()">Logout</a></li>
-  <li><a [routerLink]="['/register']">Register ;)</a></li>
-  <li><a href="#" *ngIf="auth.loggedIn()">User area</a></li>
-  </ul> -->
-<!-- </header> -->
-<!-- <router-outlet></router-outlet> -->
-<div class="content mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Angular 2 REST Website</span>
-    </div>
-  </header>
-  <!-- <main class="mdl-layout__content page-content">
-    <router-outlet></router-outlet>
-  </main>
-  <ngrx-store-log-monitor
-    toggleCommand="ctrl-k"
-    positionCommand="ctrl-e"
-  ></ngrx-store-log-monitor> -->
-  <main>
-    <div class="mdl-grid items">
-      <div class="mdl-cell mdl-cell--6-col">
-        <app-list [phones]="phones | async"
-          (selected)="selectItem($event)">
-        </app-list>
-      </div>
-      <div class="mdl-cell mdl-cell--6-col">
-        <app-detail
-          [phone]="selectedItem | async">Select an Item</app-detail>
-      </div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Select phones</span>
+    <app-list [phones]="phones | async"
+      (selected)="selectItem($event)">
+    </app-list>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <app-detail
+        [phone]="selectedItem | async">Select an Item</app-detail>
     </div>
   </main>
 </div>

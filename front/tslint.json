@@ -141,6 +141,7 @@
       "check-separator",
       "check-type"
     ],
-    "import-destructuring-spacing": true
+    "import-destructuring-spacing": true,
+    "array-type": [true, "array"]
   }
 }

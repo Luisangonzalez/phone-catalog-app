@@ -8,8 +8,8 @@ import { Phone } from './phone.model';
 import { AppList } from './app-list.component';
 import { AppDetail } from './app-detail.component';
 
-import {Store} from '@ngrx/store';
-import {Observable} from "rxjs/Observable";
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -27,20 +27,26 @@ export class AppComponent {
               private store: Store<AppStore>) {
                 // this.phones = phonesService.
                 // this.selectedItem = store.select('selectedItem');
-                phonesService.loadItems();
+                // phonesService.loadItems();
+
+                this.loadItem();
 
                 this.phones = phonesService.phones;
 
 
                 this.selectedItem = store.select('selectedItem');
-                this.selectedItem.subscribe(v => console.log('Selected', v));
+                this.selectedItem.subscribe((v) => console.log('Selected', v));
 
 
-                phonesService.loadItems();
+                // phonesService.loadItems();
   }
 
 
   selectItem(phone: Phone) {
     this.store.dispatch({type: 'SELECT_ITEM', payload: phone});
+  }
+
+  loadItem(phone: Phone) {
+    this.store.dispatch({type: 'LOAD_ITEM', payload: phone});
   }
 }

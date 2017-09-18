@@ -9,14 +9,15 @@ import { AppList } from './app-list.component';
 import { AppDetail } from './app-detail.component';
 
 import { phones } from './phones.store';
-import {selectedItem} from './selectedItem.store';
+import { selectedItem } from './selectedItem.store';
 
 import { PhonesService } from './phone.service';
 
 
-import {StoreModule} from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 
-
+import { EffectsModule } from '@ngrx/effects';
+import { PhoneEffects } from './phone.effects';
 
 // Root Angular2 Module
 @NgModule({
@@ -25,7 +26,8 @@ import {StoreModule} from '@ngrx/store';
         BrowserModule,
         HttpModule,
         FormsModule,
-        StoreModule.forRoot({phones, selectedItem})
+        StoreModule.forRoot({phones, selectedItem}),
+        EffectsModule.forRoot([PhoneEffects])
 
     ],
     // Declare components, directives, pipes
