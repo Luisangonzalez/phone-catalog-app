@@ -4,7 +4,7 @@ import { MockBackend } from '@angular/http/testing';
 
 import { Http, BaseRequestOptions } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './phone.component';
 
 const mockHttpProvider = {
     deps: [ MockBackend, BaseRequestOptions ],

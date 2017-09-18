@@ -4,9 +4,9 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { AppComponent } from './app.component';
-import { AppList } from './app-list.component';
-import { AppDetail } from './app-detail.component';
+import { AppComponent } from './phone.component';
+import { AppList } from './phone-list.component';
+import { AppDetail } from './phone-detail.component';
 
 import { phones } from './phones.store';
 import { selectedItem } from './selectedItem.store';
