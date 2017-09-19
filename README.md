@@ -10,7 +10,7 @@
 
 #### Run on Docker:
 
-Necessary [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/).
+Necessary [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/), it is tested and developed in Ubuntu 16.04.
 
 * Run fronted and backend --> http://localhost:5000
 ```bash
