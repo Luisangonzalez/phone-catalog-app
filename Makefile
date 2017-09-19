@@ -7,6 +7,9 @@ DOCKER_COMPOSE_RUN_WEB=${DOCKER_COMPOSE_WEB} run web
 
 default: build
 
+start: rm build_back build_front
+	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./back && yarn run start:dev";
+
 install_front:
 	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./front && yarn";
 
@@ -33,6 +36,9 @@ dev: build_back build_front
 
 up:
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web /bin/bash
+
+rm:
+	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./back && rm -rf node_modules coverage dist yarn.lock && cd ../front &&  rm -rf node_modules yarn.lock dist .nyc_output";
 
 # create_test: build
 # 		${DOCKER_COMPOSE_RUN_WEB} npm run createTest
