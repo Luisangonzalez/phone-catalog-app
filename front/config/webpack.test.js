@@ -28,15 +28,15 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'null-loader'
       },
+      /*
+       * SASS loader for scss support in webpack
+       *
+       * See: https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-SCSS-in-components
+       */
       {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: 'null-loader'
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders:  ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
       }
     ]
   },
@@ -50,4 +50,3 @@ module.exports = {
     )
   ]
 }
-
