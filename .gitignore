@@ -58,3 +58,8 @@ public/css/*.css
 
 #.map files
 .map
+
+# js files after build
+front/src/**/.js
+front/src/**/.js.map
+front/src/**/.spec.js.map
