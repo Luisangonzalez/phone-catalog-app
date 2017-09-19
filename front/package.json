@@ -22,8 +22,12 @@
     "copy-dist-files": "node ./copy-dist-files.js",
     "i18n": "ng-xi18n",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "ng": "ng",
-    "test:e2e": "protractor config/protactor.conf.js"
+    "webdriver:start": "npm run webdriver-manager start",
+    "webdriver:update": "webdriver-manager update",
+    "test:protractor": "protractor config/protactor.conf.js",
+    "test:protractor-update": "npm run webdriver:update && npm run test:protractor",
+    "test:e2e": "npm-run-all -p -r dev test:protractor-update"
+
   },
   "keywords": [],
   "author": "",
@@ -90,6 +94,7 @@
     "lite-server": "^2.2.2",
     "lodash": "^4.16.2",
     "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "^2.0.6",
