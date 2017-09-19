@@ -80,7 +80,7 @@ export class AppComponent {
     this.store.dispatch({type: 'SELECT_ITEM', payload: phone});
   }
 
-  loadItem(phone: Phone) {
+  loadItem(phone?: Phone) {
     this.store.dispatch({type: 'LOAD_ITEM', payload: phone});
   }
 }

@@ -5,7 +5,6 @@ var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
-const BACKEND_URI_PROD = process.env.BACKEND_URI_PROD;
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
@@ -17,13 +16,8 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].[hash].chunk.js'
   },
 
-  htmlLoader: {
-    minimize: false // workaround for ng2
-  },
-
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
       mangle: {
         keep_fnames: true
@@ -32,9 +26,14 @@ module.exports = webpackMerge(commonConfig, {
     new ExtractTextPlugin('[name].[hash].css'),
     new webpack.DefinePlugin({
       'process.env': {
-        'ENV': JSON.stringify(ENV),
-        'BACKEND_URI': JSON.stringify(BACKEND_URI_PROD)
+        'ENV': JSON.stringify(ENV)
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      htmlLoader: {
+        minimize: false // workaround for ng2
       }
     })
   ]
 });
+
