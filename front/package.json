@@ -23,7 +23,7 @@
     "i18n": "ng-xi18n",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "ng": "ng",
-    "e2e": "ng e2e"
+    "test:e2e": "protractor config/protactor.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -93,7 +93,7 @@
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "^2.0.6",
-    "protractor": "~5.1.0",
+    "protractor": "^5.1.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.41.6",

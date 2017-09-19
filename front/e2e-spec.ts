@@ -1,17 +1,20 @@
 'use strict'; // necessary for es6 output in node
 
-import { browser, element, by } from 'protractor';
+let browser = require('protractor').browser;
+let element = require('protractor').element;
+let by = require('protractor').by;
+// import { browser, element, by } from ;
 
 describe('QuickStart E2E Tests', function () {
 
-  let expectedMsg = 'Hello from Angular App with Webpack';
+  let expectedTitle = 'Phone Catalog App';
 
   beforeEach(function () {
-    browser.get('');
+    browser.get('http://localhost:8080');
   });
 
-  it(`should display: ${expectedMsg}`, function () {
-    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
+  it(`should display: ${expectedTitle}`, function () {
+    expect(element(by.css('.mdl-layout-title')).getText()).toEqual(expectedTitle);
   });
 
   it('should display an image', function () {
