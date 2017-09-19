@@ -38,7 +38,7 @@ import { Observable } from 'rxjs/Observable';
           </div>
         </header>
         <div class="mdl-layout__drawer">
-          <span class="mdl-layout-title">Select device</span>
+          <span data-element="slide-menu-title" class="mdl-layout-title">Select device</span>
           <app-list [phones]="phones | async"
             (selected)="selectItem($event)">
           </app-list>

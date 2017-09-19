@@ -1,13 +1,13 @@
-'use strict'; // necessary for es6 output in node
+'use strict';
 
 let browser = require('protractor').browser;
 let element = require('protractor').element;
 let by = require('protractor').by;
-// import { browser, element, by } from ;
 
-describe('QuickStart E2E Tests', function () {
+describe('Test catalog phone App', function () {
 
   let expectedTitle = 'Phone Catalog App';
+  let expectedSlideMenuTitle = 'Select device';
 
   beforeEach(function () {
     browser.get('http://localhost:8080');
@@ -18,8 +18,9 @@ describe('QuickStart E2E Tests', function () {
     expect($('[data-element="header-title"]').getText()).toEqual(expectedTitle);
   });
 
-  it('should display an image', function () {
-    expect(element(by.css('img')).isPresent()).toBe(true);
+  it(`test click in menu and display: ${expectedSlideMenuTitle}`, function () {
+    $('.mdl-layout__drawer-button').click();
+    expect($('[data-element="slide-menu-title"]').getText()).toEqual(expectedSlideMenuTitle);
   });
 
 });

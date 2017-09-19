@@ -95,5 +95,5 @@ If you used the previous commands (make) you should delete the generated folders
 * Install: `yarn`
 * Build: `yarn run build`
 * Dev in watch: `yarn run dev`
-* Unit Test: `yarn run test`
 * e2e Test: `yarn run test:e2e`  
+* Unit Test: `yarn run test`
