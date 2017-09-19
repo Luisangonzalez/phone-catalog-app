@@ -28,7 +28,7 @@ import { Observable } from 'rxjs/Observable';
         <header class="mdl-layout__header mdl-layout__header--transparent">
           <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Phone Catalog App</span>
+            <span class="mdl-layout-title" data-element="header-title">Phone Catalog App</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation -->

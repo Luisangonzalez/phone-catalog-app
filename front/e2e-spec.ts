@@ -11,10 +11,11 @@ describe('QuickStart E2E Tests', function () {
 
   beforeEach(function () {
     browser.get('http://localhost:8080');
+    browser.driver.manage().window().maximize();
   });
 
   it(`should display: ${expectedTitle}`, function () {
-    expect(element(by.css('.mdl-layout-title')).getText()).toEqual(expectedTitle);
+    expect($('[data-element="header-title"]').getText()).toEqual(expectedTitle);
   });
 
   it('should display an image', function () {
