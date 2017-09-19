@@ -11,7 +11,7 @@ start: rm build_back build_front
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./back && yarn run start:dev";
 
 install_front:
-	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./front && yarn";
+	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./front && rm -rf node_modules yarn.lock dist && yarn";
 
 dev_front: build_front
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./front && yarn run dev";
@@ -20,7 +20,7 @@ build_front: install_front
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./front && yarn run build";
 
 install_back:
-	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./back && yarn";
+	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./back && rm -rf node_modules coverage dist yarn.lock .nyc_output && yarn";
 
 dev_back: build_back
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web  /bin/bash -ci "cd ./back && yarn run dev";
@@ -38,7 +38,7 @@ up:
 	${DOCKER_COMPOSE_WEB} run --rm --service-ports web /bin/bash
 
 rm:
-	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./back && rm -rf node_modules coverage dist yarn.lock && cd ../front &&  rm -rf node_modules yarn.lock dist .nyc_output";
+	${DOCKER_COMPOSE_RUN_WEB}  /bin/bash -ci "cd ./back && rm -rf node_modules coverage dist yarn.lock .nyc_output && cd ../front &&  rm -rf node_modules yarn.lock dist";
 
 # create_test: build
 # 		${DOCKER_COMPOSE_RUN_WEB} npm run createTest

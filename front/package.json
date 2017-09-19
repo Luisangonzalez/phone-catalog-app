@@ -27,7 +27,6 @@
     "test:protractor": "protractor config/protactor.conf.js",
     "test:protractor-update": "npm run webdriver:update && npm run test:protractor",
     "test:e2e": "npm-run-all -p -r dev test:protractor-update"
-
   },
   "keywords": [],
   "author": "",

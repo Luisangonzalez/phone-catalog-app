@@ -8,9 +8,16 @@
   * **[Docker](https://www.docker.com/)**
 
 
-#### Docker:
+#### Run on Docker:
 
-* Dev project and watch
+Necessary [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/).
+
+* Run fronted and backend --> http://localhost:5000
+```bash
+$ make start
+```
+
+* Dev fronted (http://localhost:8080) and backend (http://localhost:5000) with watch
 ```bash
 $ make dev
 ```

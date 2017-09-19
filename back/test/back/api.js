@@ -46,7 +46,7 @@ describe('Test API REST', function() {
 
   it('/phone respond phone json ', function(done) {
     request(app).get('/phones').expect('Content-Type', 'application/json; charset=utf-8').expect(function(response) {
-      expect(response.text).to.be.string(JSON.stringify(phones));
+      expect(response.text).to.be.string(JSON.stringify(phones.phones));
     }).expect(200).end(done);
   });
 
