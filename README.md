@@ -56,3 +56,44 @@ $ make dev_back
 ```bash
 $ make up
 ```
+
+#### Run on local:
+
+Use yarn or npm.
+If you used the previous commands (make) you should delete the generated folders or `make rm`.
+
+
+##### Run fronted and backend --> http://localhost:5000
+
+  1. Build front
+  ```bash
+  $ cd front
+  $ yarn
+  $ yarn run build
+  ```
+  2. Build back and run --> http://localhost:5000
+  ```bash
+  $ cd ../back
+  $ yarn
+  $ yarn run compile
+  $ yarn run start:dev
+  ```
+
+##### Backend
+
+  * Directory: phone-catalog-app/back
+  * Install: `yarn`
+  * Compile: `yarn run compile`
+  * Dev in watch: `yarn run dev`
+  * Run compile: `yarn run start:dev`
+  * Test: `yarn run test`  
+
+
+##### Fronted
+
+* Directory: phone-catalog-app/front
+* Install: `yarn`
+* Build: `yarn run build`
+* Dev in watch: `yarn run dev`
+* Unit Test: `yarn run test`
+* e2e Test: `yarn run test:e2e`  
